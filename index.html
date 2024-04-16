@@ -38,7 +38,7 @@
         </a>
       </div>
       <div class="btn-box">
-        <button class="main-btn btn1">Google Search</button>
+        <button class="main-btn btn1" id="searchButton">Google Search</button>
         <button class="main-btn">I'm Feeling Lucky</button>
       </div>
 
@@ -62,4 +62,16 @@
       </nav>
     </footer>
   </body>
+
+  <script>
+    let text = document.getElementById("search");
+    let button = document.getElementById("searchButton");
+    button.addEventListener("click", function () {
+      let searchTerm = text.value.trim();
+      if (searchTerm !== "") {
+        let searchUrl = `https://www.google.com/search?q=${searchTerm}`;
+        window.open(searchUrl, "_self");
+      }
+    });
+  </script>
 </html>
